@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f6f8fc;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --subtle: #64748b;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --surface-nav: rgba(255, 255, 255, 0.8);
+  --line: rgba(15, 23, 42, 0.08);
+  --line-strong: rgba(15, 23, 42, 0.12);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #020617;
+  --foreground: #e2e8f0;
+  --muted: #94a3b8;
+  --subtle: #64748b;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-strong: rgba(255, 255, 255, 0.05);
+  --surface-nav: rgba(2, 6, 23, 0.8);
+  --line: rgba(255, 255, 255, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.14);
+}
+
+* {
+  border-color: rgb(148 163 184 / 0.18);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+@layer utilities {
+  .bg-app {
+    background: var(--background);
+    color: var(--foreground);
+  }
+
+  .surface-card {
+    background: var(--surface);
+    border-color: var(--line);
+    color: var(--foreground);
+  }
+
+  .surface-card-strong {
+    background: var(--surface-strong);
+    border-color: var(--line-strong);
+    color: var(--foreground);
+  }
+
+  .surface-nav {
+    background: var(--surface-nav);
+    border-color: var(--line);
+    color: var(--foreground);
+  }
+
+  .border-soft {
+    border-color: var(--line);
+  }
+
+  .border-strong {
+    border-color: var(--line-strong);
+  }
+
+  .text-main {
+    color: var(--foreground);
+  }
+
+  .text-soft {
+    color: var(--muted);
+  }
+
+  .text-faint {
+    color: var(--subtle);
+  }
+
+  .input-surface {
+    background: var(--surface-strong);
+    border-color: var(--line-strong);
+    color: var(--foreground);
+  }
 }
