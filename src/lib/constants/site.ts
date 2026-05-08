@@ -26,6 +26,27 @@ export const companyStats = [
   { label: "Engineers & Designers", value: "18" },
 ];
 
+export const heroGallery = [
+  {
+    title: "Product Strategy Session",
+    image:
+      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+    alt: "Tim digital product sedang berdiskusi di ruang meeting modern",
+  },
+  {
+    title: "UI Review Board",
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
+    alt: "Ruang kerja kreatif dengan layar presentasi desain antarmuka",
+  },
+  {
+    title: "Engineering Delivery",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+    alt: "Developer bekerja di depan laptop untuk membangun aplikasi web",
+  },
+];
+
 export const trustedCompanies = [
   "Finly",
   "Bumi Retail",
@@ -186,6 +207,9 @@ export const portfolioItems = [
     title: "NusaRetail Commerce Dashboard",
     category: "Dashboard",
     industry: "Retail",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Tampilan dashboard bisnis dengan grafik performa penjualan",
     stack: ["Next.js", "PostgreSQL", "Recharts"],
     summary: "Dashboard operasional multi-cabang dengan analitik penjualan real-time.",
   },
@@ -193,6 +217,9 @@ export const portfolioItems = [
     title: "MedikaOne Appointment Platform",
     category: "SaaS",
     industry: "Healthcare",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80",
+    alt: "Dokter menggunakan platform digital di klinik modern",
     stack: ["Next.js", "Node.js", "Redis"],
     summary: "Platform booking dan antrean digital untuk 30+ klinik.",
   },
@@ -200,6 +227,9 @@ export const portfolioItems = [
     title: "EduGrow Landing Funnel",
     category: "Landing Page",
     industry: "Education",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    alt: "Tim startup berdiskusi mengenai strategi pertumbuhan produk edukasi",
     stack: ["Next.js", "Tailwind", "GA4"],
     summary: "Landing page funnel yang meningkatkan conversion trial hingga 43%.",
   },
@@ -207,6 +237,9 @@ export const portfolioItems = [
     title: "Finly Mobile MVP",
     category: "Mobile App",
     industry: "Fintech",
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+    alt: "Orang memegang ponsel dengan aplikasi pembayaran digital terbuka",
     stack: ["React Native", "TypeScript", "Supabase"],
     summary: "MVP aplikasi keuangan personal dengan rilis 8 minggu.",
   },
@@ -214,6 +247,9 @@ export const portfolioItems = [
     title: "LegalFlow Company Profile",
     category: "Company Profile",
     industry: "Legal Tech",
+    image:
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80",
+    alt: "Ruang rapat profesional untuk firma hukum dan teknologi",
     stack: ["Next.js", "Framer Motion", "SEO"],
     summary: "Website corporate modern dengan identitas visual premium.",
   },
@@ -221,6 +257,9 @@ export const portfolioItems = [
     title: "LogistikPro Tracking System",
     category: "Custom Web App",
     industry: "Logistics",
+    image:
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    alt: "Gudang logistik modern dengan sistem monitoring digital",
     stack: ["Next.js", "Mapbox", "REST API"],
     summary: "Aplikasi tracking armada dan notifikasi SLA pelanggan.",
   },

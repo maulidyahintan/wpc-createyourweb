@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -10,6 +11,7 @@ import { FaqAccordion } from "@/components/ui/faq-accordion";
 import {
   companyStats,
   faqs,
+  heroGallery,
   pricingPlans,
   services,
   testimonials,
@@ -57,7 +59,7 @@ export default function HomePage() {
           >
             Bangun Website & App Berkualitas Enterprise yang Siap Scale
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-slate-300">
+          <p className="text-soft mt-6 max-w-xl text-lg">
             Kami membantu bisnis meluncurkan produk digital yang cepat, modern,
             SEO-friendly, dan conversion oriented dari tahap ide sampai go-live.
           </p>
@@ -74,39 +76,83 @@ export default function HomePage() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <Card className="grid gap-5 p-7">
-            <p className="text-sm uppercase tracking-[0.16em] text-cyan-200">
-              Delivery Snapshot
-            </p>
-            <div className="grid grid-cols-2 gap-3">
-              {companyStats.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-xl border border-white/10 bg-white/[0.02] p-4"
-                >
-                  <p className="text-2xl font-semibold text-white">{item.value}</p>
-                  <p className="text-xs text-slate-300">{item.label}</p>
+          <div className="grid gap-4">
+            <Card className="overflow-hidden p-3">
+              <div className="relative h-[22rem] overflow-hidden rounded-[1.25rem] border border-white/10">
+                <Image
+                  src={heroGallery[0].image}
+                  alt={heroGallery[0].alt}
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="text-xs uppercase tracking-[0.16em] text-cyan-200">
+                    Delivery Snapshot
+                  </p>
+                  <p className="mt-2 max-w-sm text-sm text-slate-200">
+                    Tim lintas fungsi yang merancang product strategy, UI system,
+                    dan engineering delivery dalam satu workflow yang sinkron.
+                  </p>
                 </div>
-              ))}
+              </div>
+            </Card>
+
+            <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+              <Card className="grid gap-5 p-7">
+                <div className="grid grid-cols-2 gap-3">
+                  {companyStats.map((item) => (
+                    <div
+                      key={item.label}
+                      className="surface-card-strong rounded-xl border p-4"
+                    >
+                      <p className="text-main text-2xl font-semibold">{item.value}</p>
+                      <p className="text-soft text-xs">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-soft text-sm">
+                  Focus kami adalah hasil bisnis: lead naik, proses lebih efisien,
+                  dan sistem yang bisa berkembang seiring pertumbuhan perusahaan.
+                </p>
+              </Card>
+
+              <div className="grid grid-cols-2 gap-4">
+                {heroGallery.slice(1).map((item) => (
+                  <Card key={item.title} className="overflow-hidden p-2">
+                    <div className="relative h-full min-h-48 overflow-hidden rounded-[1rem] border border-white/10">
+                      <Image
+                        src={item.image}
+                        alt={item.alt}
+                        fill
+                        sizes="(max-width: 768px) 50vw, 20vw"
+                        className="object-cover transition duration-500 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-slate-950/90 to-transparent" />
+                      <p className="absolute bottom-3 left-3 right-3 text-sm font-medium text-white">
+                        {item.title}
+                      </p>
+                    </div>
+                  </Card>
+                ))}
+              </div>
             </div>
-            <p className="text-sm text-slate-300">
-              Focus kami adalah hasil bisnis: lead naik, proses lebih efisien,
-              dan sistem yang bisa berkembang seiring pertumbuhan perusahaan.
-            </p>
-          </Card>
+          </div>
         </Reveal>
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-12 md:px-8">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-6 md:px-8">
-          <p className="mb-4 text-xs uppercase tracking-[0.16em] text-slate-400">
+        <div className="surface-card rounded-2xl border px-5 py-6 md:px-8">
+          <p className="text-faint mb-4 text-xs uppercase tracking-[0.16em]">
             Trusted by Growing Companies
           </p>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-6">
             {trustedCompanies.map((name) => (
               <div
                 key={name}
-                className="rounded-lg border border-white/10 bg-slate-900/60 px-3 py-2 text-center text-sm text-slate-200"
+                className="surface-card-strong text-main rounded-lg border px-3 py-2 text-center text-sm"
               >
                 {name}
               </div>
@@ -127,7 +173,7 @@ export default function HomePage() {
               <Card className="h-full">
                 <service.icon className="h-6 w-6 text-cyan-300" />
                 <h3 className="mt-4 text-lg font-semibold">{service.title}</h3>
-                <p className="mt-2 text-sm text-slate-300">{service.description}</p>
+                <p className="text-soft mt-2 text-sm">{service.description}</p>
                 <p className="mt-4 text-xs font-medium text-cyan-200">
                   {service.pricing}
                 </p>
@@ -149,7 +195,7 @@ export default function HomePage() {
               <Card>
                 <item.icon className="h-6 w-6 text-cyan-300" />
                 <h3 className="mt-4 text-xl font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-300">{item.description}</p>
+                <p className="text-soft mt-2 text-sm">{item.description}</p>
               </Card>
             </Reveal>
           ))}
@@ -170,7 +216,7 @@ export default function HomePage() {
                   {step.step}
                 </p>
                 <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
-                <p className="mt-2 text-sm text-slate-300">{step.description}</p>
+                <p className="text-soft mt-2 text-sm">{step.description}</p>
               </Card>
             </Reveal>
           ))}
@@ -187,10 +233,10 @@ export default function HomePage() {
           {testimonials.map((item, index) => (
             <Reveal key={item.name} delay={index * 0.08}>
               <Card className="h-full">
-                <p className="text-sm text-slate-200">“{item.quote}”</p>
+                <p className="text-soft text-sm">“{item.quote}”</p>
                 <div className="mt-6">
                   <p className="font-semibold">{item.name}</p>
-                  <p className="text-xs text-slate-400">{item.role}</p>
+                  <p className="text-faint text-xs">{item.role}</p>
                 </div>
               </Card>
             </Reveal>
@@ -209,7 +255,7 @@ export default function HomePage() {
             <Card key={plan.name} className="h-full">
               <h3 className="text-lg font-semibold">{plan.name}</h3>
               <p className="mt-2 text-xl font-bold text-cyan-200">{plan.range}</p>
-              <p className="mt-3 text-sm text-slate-300">{plan.description}</p>
+              <p className="text-soft mt-3 text-sm">{plan.description}</p>
             </Card>
           ))}
         </div>
@@ -228,12 +274,12 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-20 md:px-8">
-        <Card className="flex flex-col items-start justify-between gap-6 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 p-8 md:flex-row md:items-center">
+        <Card className="bg-linear-to-r from-cyan-500/20 to-blue-500/20 flex flex-col items-start justify-between gap-6 p-8 md:flex-row md:items-center">
           <div>
             <h2 className="text-2xl font-semibold md:text-3xl">
               Siap Upgrade Website atau Bangun Produk Baru?
             </h2>
-            <p className="mt-2 text-slate-200">
+            <p className="text-soft mt-2">
               Ceritakan goal bisnis Anda, kami bantu rancang solusi paling tepat.
             </p>
           </div>
