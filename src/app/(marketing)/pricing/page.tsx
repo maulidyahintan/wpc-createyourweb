@@ -31,8 +31,8 @@ export default function PricingPage() {
             >
               <h2 className="text-lg font-semibold">{plan.name}</h2>
               <p className="mt-2 text-xl font-bold text-cyan-200">{plan.range}</p>
-              <p className="mt-3 text-sm text-slate-300">{plan.description}</p>
-              <ul className="mt-4 space-y-1 text-sm text-slate-200">
+              <p className="text-soft mt-3 text-sm">{plan.description}</p>
+              <ul className="text-main mt-4 space-y-1 text-sm">
                 {plan.features.map((feature) => (
                   <li key={feature}>• {feature}</li>
                 ))}
@@ -51,7 +51,7 @@ export default function PricingPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {addOnPricing.map((item) => (
             <Card key={item.name}>
-              <p className="text-sm text-slate-300">{item.name}</p>
+              <p className="text-soft text-sm">{item.name}</p>
               <p className="mt-2 text-lg font-semibold text-cyan-200">{item.price}</p>
             </Card>
           ))}
@@ -61,7 +61,7 @@ export default function PricingPage() {
       <Card className="mt-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
         <div>
           <h3 className="text-2xl font-semibold">Butuh estimasi spesifik project Anda?</h3>
-          <p className="mt-2 text-sm text-slate-300">
+          <p className="text-soft mt-2 text-sm">
             Diskusikan requirement dan target timeline untuk mendapatkan proposal resmi.
           </p>
         </div>

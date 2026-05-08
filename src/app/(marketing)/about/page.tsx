@@ -42,7 +42,7 @@ export default function AboutPage() {
         <Reveal>
           <Card className="h-full">
             <h2 className="text-2xl font-semibold">Visi</h2>
-            <p className="mt-3 text-sm text-slate-300">
+            <p className="text-soft mt-3 text-sm">
               Menjadi partner teknologi terpercaya untuk perusahaan Indonesia
               dalam membangun produk digital kelas global.
             </p>
@@ -52,7 +52,7 @@ export default function AboutPage() {
         <Reveal delay={0.08}>
           <Card className="h-full">
             <h2 className="text-2xl font-semibold">Misi</h2>
-            <ul className="mt-3 space-y-2 text-sm text-slate-300">
+            <ul className="text-soft mt-3 space-y-2 text-sm">
               <li>• Membangun solusi yang cepat diadopsi user.</li>
               <li>• Menjaga kualitas code dan desain berstandar enterprise.</li>
               <li>• Memberikan komunikasi proyek yang transparan.</li>
@@ -66,7 +66,7 @@ export default function AboutPage() {
           <Reveal key={member.role} delay={index * 0.05}>
             <Card>
               <p className="text-3xl font-bold text-cyan-200">{member.count}</p>
-              <p className="mt-2 text-sm text-slate-300">{member.role}</p>
+              <p className="text-soft mt-2 text-sm">{member.role}</p>
             </Card>
           </Reveal>
         ))}
@@ -81,7 +81,7 @@ export default function AboutPage() {
         <div className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
           {technologies.map((tech) => (
             <Card key={tech} className="py-4">
-              <p className="text-sm font-medium text-slate-200">{tech}</p>
+              <p className="text-main text-sm font-medium">{tech}</p>
             </Card>
           ))}
         </div>
@@ -95,7 +95,7 @@ export default function AboutPage() {
         ].map((step, index) => (
           <Reveal key={step} delay={index * 0.07}>
             <Card>
-              <p className="text-xs uppercase tracking-[0.14em] text-slate-400">
+              <p className="text-faint text-xs uppercase tracking-[0.14em]">
                 Workflow {index + 1}
               </p>
               <h3 className="mt-3 text-lg font-semibold">{step}</h3>

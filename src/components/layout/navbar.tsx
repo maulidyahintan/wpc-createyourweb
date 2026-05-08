@@ -14,12 +14,13 @@ export function Navbar() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [open, setOpen] = useState(false);
+  const currentTheme = theme ?? "dark";
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+    <header className="surface-nav sticky top-0 z-50 border-b backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 md:px-8">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400 to-blue-500 text-slate-950">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-cyan-400 to-blue-500 text-slate-950">
             C
           </span>
           <span>CreateYourWeb</span>
@@ -33,8 +34,8 @@ export function Navbar() {
               className={cn(
                 "rounded-lg px-3 py-2 text-sm transition-colors",
                 pathname === item.href
-                  ? "bg-white/10 text-white"
-                  : "text-slate-300 hover:text-white",
+                  ? "bg-slate-900/8 text-main dark:bg-white/10"
+                  : "text-soft hover:text-main",
               )}
             >
               {item.label}
@@ -48,10 +49,10 @@ export function Navbar() {
             size="sm"
             className="hidden md:inline-flex"
             onClick={() => {
-              setTheme(theme === "dark" ? "light" : "dark");
+              setTheme(currentTheme === "dark" ? "light" : "dark");
             }}
           >
-            {theme === "dark" ? (
+            {currentTheme === "dark" ? (
               <SunMedium className="h-4 w-4" />
             ) : (
               <MoonStar className="h-4 w-4" />
@@ -64,7 +65,7 @@ export function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-slate-200 md:hidden"
+            className="border-soft text-main inline-flex h-9 w-9 items-center justify-center rounded-lg border md:hidden"
             onClick={() => setOpen((prev) => !prev)}
             aria-label="Toggle navigation"
           >
@@ -74,7 +75,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-slate-950 md:hidden">
+        <div className="surface-nav border-t md:hidden">
           <nav className="mx-auto flex w-full max-w-7xl flex-col gap-1 px-4 py-4">
             {navLinks.map((item) => (
               <Link
@@ -83,8 +84,8 @@ export function Navbar() {
                 className={cn(
                   "rounded-lg px-3 py-2 text-sm",
                   pathname === item.href
-                    ? "bg-white/10 text-white"
-                    : "text-slate-300",
+                    ? "bg-slate-900/8 text-main dark:bg-white/10"
+                    : "text-soft",
                 )}
                 onClick={() => setOpen(false)}
               >
@@ -96,7 +97,7 @@ export function Navbar() {
               size="sm"
               className="mt-2"
               onClick={() => {
-                setTheme(theme === "dark" ? "light" : "dark");
+                setTheme(currentTheme === "dark" ? "light" : "dark");
               }}
             >
               Toggle Theme

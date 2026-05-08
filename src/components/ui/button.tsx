@@ -9,10 +9,10 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 shadow-[0_10px_30px_-10px_rgba(56,189,248,0.5)] hover:scale-[1.02]",
+          "bg-linear-to-r from-cyan-400 to-blue-500 text-slate-950 shadow-[0_10px_30px_-10px_rgba(56,189,248,0.5)] hover:scale-[1.02]",
         secondary:
-          "bg-white/10 text-white backdrop-blur border border-white/15 hover:bg-white/15",
-        ghost: "text-slate-300 hover:bg-white/5 hover:text-white",
+          "surface-card-strong border backdrop-blur hover:bg-slate-100/80 dark:hover:bg-white/12",
+        ghost: "text-soft hover:bg-slate-900/5 hover:text-slate-950 dark:hover:bg-white/5 dark:hover:text-white",
       },
       size: {
         default: "h-11 px-5",

@@ -30,7 +30,7 @@ export default function ContactPage() {
                 <span>Nama</span>
                 <input
                   type="text"
-                  className="h-11 rounded-xl border border-white/15 bg-white/[0.04] px-3 text-sm outline-none ring-cyan-400/60 transition focus:ring-2"
+                  className="input-surface h-11 rounded-xl border px-3 text-sm outline-none ring-cyan-400/60 transition focus:ring-2"
                   placeholder="Nama lengkap"
                 />
               </label>
@@ -38,7 +38,7 @@ export default function ContactPage() {
                 <span>Email</span>
                 <input
                   type="email"
-                  className="h-11 rounded-xl border border-white/15 bg-white/[0.04] px-3 text-sm outline-none ring-cyan-400/60 transition focus:ring-2"
+                  className="input-surface h-11 rounded-xl border px-3 text-sm outline-none ring-cyan-400/60 transition focus:ring-2"
                   placeholder="nama@perusahaan.com"
                 />
               </label>
@@ -46,7 +46,7 @@ export default function ContactPage() {
 
             <label className="grid gap-2 text-sm">
               <span>Jenis Layanan</span>
-              <select className="h-11 rounded-xl border border-white/15 bg-slate-950 px-3 text-sm outline-none ring-cyan-400/60 transition focus:ring-2">
+              <select className="input-surface h-11 rounded-xl border px-3 text-sm outline-none ring-cyan-400/60 transition focus:ring-2">
                 <option>Landing Page</option>
                 <option>Company Profile</option>
                 <option>Dashboard Admin</option>
@@ -62,7 +62,7 @@ export default function ContactPage() {
               <span>Detail Kebutuhan</span>
               <textarea
                 rows={6}
-                className="rounded-xl border border-white/15 bg-white/[0.04] p-3 text-sm outline-none ring-cyan-400/60 transition focus:ring-2"
+                className="input-surface rounded-xl border p-3 text-sm outline-none ring-cyan-400/60 transition focus:ring-2"
                 placeholder="Jelaskan target, fitur utama, dan timeline yang diinginkan"
               />
             </label>
@@ -76,7 +76,7 @@ export default function ContactPage() {
         <div className="grid gap-4">
           <Card>
             <h3 className="text-lg font-semibold">Kontak Cepat</h3>
-            <div className="mt-4 grid gap-3 text-sm text-slate-300">
+            <div className="text-soft mt-4 grid gap-3 text-sm">
               <p className="inline-flex items-center gap-2">
                 <MessageCircle className="h-4 w-4" /> WhatsApp: +62 812 0000 0000
               </p>
@@ -97,7 +97,7 @@ export default function ContactPage() {
               <CalendarClock className="h-5 w-5 text-cyan-200" /> Calendly
               Placeholder
             </h3>
-            <p className="mt-3 text-sm text-slate-300">
+            <p className="text-soft mt-3 text-sm">
               Integrasi jadwal meeting otomatis (Calendly) dapat diaktifkan pada
               tahap deployment production.
             </p>

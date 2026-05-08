@@ -29,24 +29,24 @@ export default function ServicesPage() {
             <Card className="h-full">
               <service.icon className="h-6 w-6 text-cyan-300" />
               <h2 className="mt-4 text-xl font-semibold">{service.title}</h2>
-              <p className="mt-2 text-sm text-slate-300">{service.description}</p>
+              <p className="text-soft mt-2 text-sm">{service.description}</p>
 
               <div className="mt-5 grid gap-4 md:grid-cols-2">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.14em] text-slate-400">
+                  <p className="text-faint text-xs uppercase tracking-[0.14em]">
                     Benefit
                   </p>
-                  <ul className="mt-2 space-y-1 text-sm text-slate-200">
+                  <ul className="text-main mt-2 space-y-1 text-sm">
                     {service.benefits.map((benefit) => (
                       <li key={benefit}>• {benefit}</li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.14em] text-slate-400">
+                  <p className="text-faint text-xs uppercase tracking-[0.14em]">
                     Teknologi
                   </p>
-                  <ul className="mt-2 space-y-1 text-sm text-slate-200">
+                  <ul className="text-main mt-2 space-y-1 text-sm">
                     {service.technologies.map((tech) => (
                       <li key={tech}>• {tech}</li>
                     ))}
@@ -56,10 +56,10 @@ export default function ServicesPage() {
 
               <div className="mt-5 grid gap-2 text-sm">
                 <p>
-                  <span className="text-slate-400">Estimasi waktu:</span> {service.duration}
+                  <span className="text-faint">Estimasi waktu:</span> {service.duration}
                 </p>
                 <p>
-                  <span className="text-slate-400">Harga mulai:</span> {service.pricing}
+                  <span className="text-faint">Harga mulai:</span> {service.pricing}
                 </p>
               </div>
 

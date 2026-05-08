@@ -34,7 +34,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${geist.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-slate-950 font-(--font-inter) text-slate-100">
+      <body className="min-h-full bg-app font-(--font-inter)">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
         </ThemeProvider>
